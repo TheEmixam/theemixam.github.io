@@ -1,1 +1,43 @@
-Coming soon
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Sliderz - Community Level</title>
+</head>
+<body>
+    <main id="content"></main>
+
+    <script>
+        const content = document.getElementById("content");
+        const match = window.location.pathname.match(
+            /^\/level\/([^/]+)\/?$/
+        );
+
+        if (match) {
+            const levelId = decodeURIComponent(match[1]);
+
+            const heading = document.createElement("h1");
+            heading.textContent = "Play this level in Sliderz!";
+
+            const description = document.createElement("p");
+            description.textContent =
+                "Install Sliderz to play this community level.";
+
+            const identifier = document.createElement("p");
+            identifier.textContent = `Level ID: ${levelId}`;
+
+            content.append(heading, description, identifier);
+
+            // Add your Google Play link once available.
+        } else {
+            const heading = document.createElement("h1");
+            heading.textContent = "Page not found";
+            content.append(heading);
+        }
+    </script>
+</body>
+</html>
